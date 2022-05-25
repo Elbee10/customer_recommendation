@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+body {
+    margin : 0;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f5f8fa;
+
+}
+
+.navbar-laravel {
+    box-shadow: 0 2px 4px rgb(0, 0, .04);
+}
+
+.navbar-brand .nav-link .my-form .login-form  {
+    font-family: Ralyway, sans-serif;
+}
+
+.my-form{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.my-form .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#navbarSupportedContent{
+    align-content: flex-end;
+}
+#first_name{
+    margin-top: 0.2rem;
+    margin-bottom: 1.2rem;
+}
+#last_name{
+    margin-bottom: 1.2rem;
+}
+#email{
+    margin-bottom: 1.2rem;
+}
+#username{
+    margin-bottom: 1.2rem;
+}
+#password{
+    margin-bottom: 1.2rem;
+}
+#repeat_password{
+    margin-bottom: 1.2rem;
+}
+#address{
+    margin-bottom: 1.2rem;
+}
+#dob{
+    margin-bottom: 1.2rem;
+}
+.card-header{
+    text-align: center;
+}
+.checkbox{
+    margin-top: 0rem;
+    margin-bottom: 1.2rem;
+}
