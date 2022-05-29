@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Customer;
 use Hash;
 use Rule;
+use Session;
+
 
 class CustomAuthController extends Controller
 {
@@ -55,12 +57,38 @@ class CustomAuthController extends Controller
         }
 
             
-      
-       
-
-
-
-
-
     }
+
+    public function login_user(Request $request){
+        $request->validate([
+            'username'=>'required',
+            'password'=>'required',
+        ]);
+        $customer = Customer::where('username', '=', $request->username)->first();
+       
+        if ($customer) {
+            if (Hash::check($request->password, $customer->password)) {
+                $request->session()->put('loginId', $customer->id);
+                return redirect('dashboard');
+                # code...
+            }else{
+                return back()->with('fail', 'password no match')->withInput();
+            }
+        }else{
+            return back()->with('fail', 'email no match')->withInput();
+        }
+    }
+
+    public function logout(){
+        if (Session::has('loginId')) {
+            Session::pull('loginId');
+            return redirect('login');
+            # code...
+        }
+        
+    }
+
+   
+
+    
 }

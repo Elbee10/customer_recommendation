@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use App\Http\Controllers\CustomAuthController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login',[CustomAuthController::class, 'login'] );
-Route::get('/registration', [CustomAuthController::class, 'registration']);
+Route::view('/index', 'dashboard.index')->name('index');
+Route::get('/login',[CustomAuthController::class, 'login'] )->name('login')->middleware('alreadyLogged');
+Route::get('/registration', [CustomAuthController::class, 'registration'])->middleware('alreadyLogged');
 Route::post('/register-user', [CustomAuthController::class, 'register_user'])->name('register-user');
+Route::post('/login-user', [CustomAuthController::class, 'login_user'] )->name('login-user');
+Route::get('/dashboard', [ProductsController::class, 'productsDashboard'])->middleware('isLoggedIn');
+Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logout');
