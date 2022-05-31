@@ -18,6 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('image');
+        });
     }
 
     /**

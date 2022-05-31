@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{{asset('imges/favicon.ico')}}" rel="icon">
+    <link href="{{asset('img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -146,7 +146,7 @@
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <a href="{{route('login')}}" class="nav-item nav-link">Login</a>
-                            <a href="{{route('register-user')}}" class="nav-item nav-link">Sign-up</a>
+                            <a href="{{route('register')}}" class="nav-item nav-link">Sign-up</a>
                         </div>
                     </div>
                 </nav>

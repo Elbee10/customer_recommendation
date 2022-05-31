@@ -19,8 +19,19 @@ Route::get('/', function () {
 });
 Route::view('/index', 'dashboard.index')->name('index');
 Route::get('/login',[CustomAuthController::class, 'login'] )->name('login')->middleware('alreadyLogged');
-Route::get('/registration', [CustomAuthController::class, 'registration'])->middleware('alreadyLogged');
+Route::get('/registration', [CustomAuthController::class, 'registration'])->name('register')->middleware('alreadyLogged');
+Route::get('/add-products', [ProductsController::class, 'addProducts'] )->name('add-products');
+
 Route::post('/register-user', [CustomAuthController::class, 'register_user'])->name('register-user');
 Route::post('/login-user', [CustomAuthController::class, 'login_user'] )->name('login-user');
+Route::post('/add-products-admin', [ProductsController::class, 'addProductsAdmin'] )->name('add-products-admin');
+//Route::post('/place-order', [ProductsController::class, 'place_order'] )->name('place-order');
+
 Route::get('/dashboard', [ProductsController::class, 'productsDashboard'])->middleware('isLoggedIn');
 Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logout');
+Route::get('/order', [ProductsController::class, 'order'])->name('order');
+Route::get('/product-category', [ProductsController::class, 'productCategory'])->name('product-category');
+
+
+
+
